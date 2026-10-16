@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">doorOBlock</string>
+    <string name="service_desc">برای تشخیص سایت‌ها و جستجوهای ممنوع و جلوگیری از آنها</string>
+</resources>
