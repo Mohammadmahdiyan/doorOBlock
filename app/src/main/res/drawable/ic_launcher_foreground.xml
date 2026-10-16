@@ -1,0 +1,11 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- سپر با یک در (سوراخ) -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:fillType="evenOdd"
+        android:pathData="M54,24 L78,32 L78,54 C78,68 68,78 54,84 C40,78 30,68 30,54 L30,32 Z M46,66 L46,45 C46,40.6 49.6,37 54,37 C58.4,37 62,40.6 62,45 L62,66 Z" />
+</vector>
