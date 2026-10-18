@@ -1,4 +1,71 @@
 <resources>
     <string name="app_name">doorOBlock</string>
     <string name="service_desc">برای تشخیص سایت‌ها و جستجوهای ممنوع و جلوگیری از آنها</string>
+
+    <!-- نوار بالا -->
+    <string name="app_title">محافظ من</string>
+    <string name="cd_menu">منو</string>
+    <string name="menu_sites">سایت‌های سفارشی (%1$s)</string>
+    <string name="menu_words">کلمه‌ها و عبارت‌های سفارشی (%1$s)</string>
+
+    <!-- وضعیت حفاظت -->
+    <string name="status_active_title">حفاظت فعال است</string>
+    <string name="status_active_sub">سرویس دسترس‌پذیری روشن است و سایت‌ها و جستجوها بررسی می‌شوند.</string>
+    <string name="status_locked_title">حفاظت فعال · قفل برقرار است</string>
+    <string name="status_locked_sub">تا پایان قفل فقط سایت قرآن مجاز است. زمان باقی‌مانده: %1$s</string>
+    <string name="status_inactive_title">حفاظت غیرفعال است</string>
+    <string name="status_inactive_sub">سرویس دسترس‌پذیری خاموش است. تا وقتی روشن نشود، هیچ سایت یا جستجویی بررسی یا مسدود نمی‌شود.</string>
+    <string name="btn_enable_service">روشن‌کردن سرویس دسترس‌پذیری</string>
+    <string name="error_label">آخرین خطای سرویس</string>
+    <string name="btn_clear_error">پاک‌کردن خطا</string>
+
+    <!-- زمان -->
+    <string name="time_title">مدت سپری‌شده</string>
+    <string name="time_days_goal">%1$s از %2$s روز</string>
+    <string name="time_hours">ساعت (از ۲۴)</string>
+    <string name="time_minutes">دقیقه (از ۶۰)</string>
+    <string name="time_seconds">ثانیه (از ۶۰)</string>
+
+    <!-- افزودن -->
+    <string name="add_title">افزودن سایت یا کلمه</string>
+    <string name="add_helper">آدرس سایت (مثل example.com) یا یک کلمه یا عبارت وارد کن.</string>
+    <string name="add_hint">example.com یا یک کلمه</string>
+    <string name="add_button">افزودن به فهرست ممنوع</string>
+    <string name="msg_added">به فهرست ممنوع اضافه شد.</string>
+    <string name="msg_empty_input">ابتدا یک سایت یا کلمه وارد کن.</string>
+    <string name="msg_duplicate">این مورد قبلاً اضافه شده است.</string>
+    <string name="msg_too_long">ورودی خیلی طولانی است (حداکثر %1$s نویسه).</string>
+    <string name="custom_summary">موارد سفارشی: %1$s سایت · %2$s کلمه یا عبارت</string>
+    <string name="custom_summary_hint">برای مشاهده و حذف، از منوی ⋮ بالای صفحه استفاده کن.</string>
+
+    <!-- فهرست موارد سفارشی -->
+    <string name="list_sites_title">سایت‌های سفارشی</string>
+    <string name="list_words_title">کلمه‌ها و عبارت‌های سفارشی</string>
+    <string name="list_count">%1$s مورد</string>
+    <string name="list_sites_empty">هنوز سایتی اضافه نکرده‌ای.</string>
+    <string name="list_words_empty">هنوز کلمه یا عبارتی اضافه نکرده‌ای.</string>
+    <string name="cd_delete_item">حذف مورد شماره %1$s</string>
+    <string name="msg_deleted">مورد حذف شد.</string>
+    <string name="msg_delete_failed">این مورد دیگر در فهرست نیست.</string>
+    <string name="btn_close">بستن</string>
+
+    <!-- تأیید حذف -->
+    <string name="confirm_delete_title">این مورد حذف شود؟</string>
+    <string name="confirm_delete_message">مورد شماره %1$s از فهرست «%2$s» حذف می‌شود. این کار قابل بازگشت نیست و موارد دیگر دست‌نخورده می‌مانند.</string>
+    <string name="confirm_delete_message_with_item">«%3$s» (مورد شماره %1$s از فهرست «%2$s») حذف می‌شود. این کار قابل بازگشت نیست و موارد دیگر دست‌نخورده می‌مانند.</string>
+    <string name="btn_cancel">انصراف</string>
+    <string name="btn_delete">حذف</string>
+
+    <!-- رمزهای بازیابی -->
+    <string name="codes_title">رمزهای بازیابی</string>
+    <string name="codes_helper">این پنج رمز را در جای امن بنویس. انتخاب و کپی متن در این بخش غیرفعال است.</string>
+    <string name="code_label">رمز %1$s</string>
+
+    <!-- تأیید برای غیرفعال‌کردن -->
+    <string name="verify_title">غیرفعال‌کردن محافظت</string>
+    <string name="verify_helper">برای رفتن به تنظیمات و خاموش‌کردن سرویس، هر پنج رمز را دقیق و با دست تایپ کن. جای‌گذاری (Paste) در این کادرها غیرفعال است.</string>
+    <string name="btn_verify">بررسی رمزها و ادامه</string>
+    <string name="btn_clear_all">پاک‌کردن همه کادرها</string>
+    <string name="msg_codes_wrong">حداقل یکی از رمزها اشتباه است؛ همه کادرها پاک شدند.</string>
+    <string name="msg_codes_ok">رمزها تأیید شد. تنظیمات دسترس‌پذیری باز می‌شود.</string>
 </resources>

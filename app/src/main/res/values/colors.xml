@@ -1,3 +1,32 @@
 <resources>
     <color name="ic_launcher_background">#0F3D3E</color>
+
+    <!-- سطح‌ها -->
+    <color name="bg">#F4F6F8</color>
+    <color name="card">#FFFFFF</color>
+    <color name="stroke">#E1E6EB</color>
+    <color name="divider">#E8ECF0</color>
+    <!-- متن -->
+    <color name="text_primary">#1B2430</color>
+    <color name="text_secondary">#566272</color>
+    <!-- دکمه‌ها -->
+    <color name="primary">#0F766E</color>
+    <color name="primary_pressed">#0B5A54</color>
+    <color name="on_primary">#FFFFFF</color>
+    <color name="secondary_bg">#E3F1EF</color>
+    <color name="secondary_fg">#0B5A54</color>
+    <color name="danger">#B3261E</color>
+    <color name="on_danger">#FFFFFF</color>
+    <!-- وضعیت‌ها -->
+    <color name="ok_bg">#E3F4EC</color>
+    <color name="ok_fg">#17653F</color>
+    <color name="off_bg">#FDE8E7</color>
+    <color name="off_fg">#A8231B</color>
+    <color name="warn_bg">#FFF1D1</color>
+    <color name="warn_fg">#7A4F00</color>
+    <!-- ورودی و رمز -->
+    <color name="input_bg">#F1F4F7</color>
+    <color name="input_stroke">#C6CFD8</color>
+    <color name="code_bg">#EEF2F5</color>
+    <color name="scrim">#66000000</color>
 </resources>

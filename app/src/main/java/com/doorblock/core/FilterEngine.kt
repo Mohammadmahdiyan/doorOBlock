@@ -175,11 +175,10 @@ class FilterEngine(
             val keywords = DefaultLists.keywords.toMutableList()
             for (raw in custom) {
                 val item = raw.trim()
-                if (item.isEmpty()) continue
-                if (item.contains('.') && item.none { it.isWhitespace() }) {
-                    plain.add(canonicalHost(item))
-                } else {
-                    keywords.add(item)
+                when (CustomItems.kindOf(item)) {
+                    ItemKind.SITE -> plain.add(canonicalHost(item))
+                    ItemKind.WORD -> keywords.add(item)
+                    null -> Unit
                 }
             }
             return FilterEngine(DefaultLists.domains, keywords, plain, bigDomains)
