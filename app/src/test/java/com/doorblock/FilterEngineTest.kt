@@ -54,4 +54,33 @@ class FilterEngineTest {
         assertFalse(e.isBlocked("https://www.google.com/search?q=weather"))
         assertFalse(e.isBlocked(""))
     }
+
+    @Test fun subdomainsAndLookalikes() {
+        assertTrue(e.isBlocked("https://sub.xvideos.com"))
+        assertFalse(e.isBlocked("https://notxvideos.com"))
+        assertFalse(e.isBlocked("https://xvideos.com.example.org"))
+    }
+
+    @Test fun invalidOrOddInputNeverCrashes() {
+        val odd = listOf(
+            "http://", ":::", "%zz", "http://%zz/%zz", "https://", "//", "....", "@", "a@b",
+            "x".repeat(5000), "\u200b\u200b", "😀", "http://[::1]:80/", "http://xnxx.com:notaport",
+        )
+        for (o in odd) e.isBlocked(o) // فقط نباید استثنا بدهد
+    }
+
+    @Test fun duplicateDomainsAreHandled() {
+        val dup = FilterEngine(setOf("xnxx.com", "XNXX.com", "www.xnxx.com", "xnxx.com."), listOf("porn", "porn"))
+        assertTrue(dup.isBlocked("https://xnxx.com"))
+        assertTrue(dup.isBlocked("m.xnxx.com"))
+        assertFalse(dup.isBlocked("notxnxx.com"))
+    }
+
+    @Test fun buildMergesCustomItems() {
+        val b = FilterEngine.build(setOf("Example.org", "example.org", "bad phrase", " ", ""))
+        assertTrue(b.isBlocked("https://sub.example.org/x"))
+        assertTrue(b.isBlocked("bad phrase"))
+        assertTrue(b.isBlocked("https://gtaall.com")) // لیست پیش‌فرض حفظ شده
+        assertFalse(b.isBlocked("https://notexample.org"))
+    }
 }

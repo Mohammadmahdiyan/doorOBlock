@@ -55,6 +55,13 @@ class Prefs(ctx: Context) {
             return generated
         }
 
+    /** آخرین خطای سرویس (برای عیب‌یابی؛ در صفحه‌ی اصلی نشان داده می‌شود). */
+    var lastError: String
+        get() = sp.getString("last_error", "") ?: ""
+        set(v) {
+            sp.edit().putString("last_error", v).apply()
+        }
+
     fun isLocked(now: Long = System.currentTimeMillis()) = now < lockUntil
 
     fun lock(now: Long = System.currentTimeMillis()) {

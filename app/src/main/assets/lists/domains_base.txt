@@ -1,0 +1,29 @@
+# doorOBlock bundled domain list
+# generated: seed
+# This is the small committed seed (well-known domains only). The CI build replaces it with
+# the merged public lists via tools/build_domain_list.py (see docs/LISTS.md).
+beeg.com
+bongacams.com
+brazzers.com
+camsoda.com
+chaturbate.com
+eporner.com
+gtaall.com
+hqporner.com
+livejasmin.com
+myfreecams.com
+nhentai.net
+pornhub.com
+porntrex.com
+redtube.com
+rule34.xxx
+spankbang.com
+stripchat.com
+thumbzilla.com
+tube8.com
+xhamster.com
+xnxx.com
+xtube.com
+xvideos.com
+youjizz.com
+youporn.com

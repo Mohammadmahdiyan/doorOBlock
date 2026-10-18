@@ -14,6 +14,7 @@ import android.widget.*
 import com.doorblock.core.Config
 import com.doorblock.core.Prefs
 import com.doorblock.core.StreakTimer
+import com.doorblock.service.ServiceStatus
 
 class MainActivity : Activity() {
     private lateinit var prefs: Prefs
@@ -24,6 +25,7 @@ class MainActivity : Activity() {
     private lateinit var tvMinutes: TextView
     private lateinit var tvSeconds: TextView
     private lateinit var tvLock: TextView
+    private lateinit var tvStatus: TextView
     private lateinit var input: EditText
 
     private lateinit var codeInputs: List<EditText>
@@ -54,6 +56,7 @@ class MainActivity : Activity() {
         tvSeconds = label(22f)
 
         tvLock = label(16f)
+        tvStatus = label(16f)
 
         input = EditText(this).apply {
             hint = "سایت یا کلمه (مثلاً example.com)"
@@ -84,6 +87,7 @@ class MainActivity : Activity() {
             addView(tvHours)
             addView(tvMinutes)
             addView(tvSeconds)
+            addView(tvStatus)
             addView(tvLock)
 
             addView(label(20f).apply {
@@ -230,6 +234,11 @@ class MainActivity : Activity() {
         tvHours.text = "ساعت: ${s.hours} / 24"
         tvMinutes.text = "دقیقه: ${s.minutes} / 60"
         tvSeconds.text = "ثانیه: ${s.seconds} / 60"
+
+        val active = ServiceStatus.isEnabled(this)
+        val err = prefs.lastError
+        tvStatus.text = (if (active) "حفاظت: فعال" else "حفاظت غیرفعال است؛ سرویس دسترس‌پذیری را روشن کن") +
+            (if (err.isNotEmpty()) "\nآخرین خطا: $err" else "")
 
         tvLock.text = if (prefs.isLocked(now)) {
             "قفل فعال: ${(prefs.lockUntil - now) / 1000} ثانیه مانده"
