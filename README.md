@@ -41,3 +41,7 @@
 - نمایش رمزها: انتخاب/کپی غیرفعال (`ui/widgets/NoCopyTextView.kt`). کادرهای رمز: Paste/Cut/Copy و Drag&Drop و وارد کردن چندحرفی از صفحه‌کلید بسته است (`NoPasteEditText.kt`)، تایپ دستی و پاک‌کردن کار می‌کند. این یک محدودیت بهینه است، نه امنیت مطلق.
 - متن موارد سفارشی در فهرست‌ها دقیقاً ۲ پیکسل است (`UiSpec.CUSTOM_ITEM_TEXT_PX` و `styleCustomItemText` در `ui/Ui.kt`).
 - پنجره‌ی تأیید حذف به‌طور پیش‌فرض متن مورد را نشان نمی‌دهد؛ برای تغییر: `UiSpec.CONFIRM_SHOWS_ITEM`.
+
+### افزوده‌ی بعدی
+- منوی ⋮ ← «رمز ۱۰۰ نویسه‌ای و مشاهده موارد»: رمز تصادفی ۱۰۰ نویسه‌ای (غیرقابل‌کپی) + کادر ورودی (بدون Paste)؛ با ثبت رمز درست، سایت‌ها و کلمه‌های سفارشی خوانا نمایش داده می‌شوند (`ui/SecretDialog.kt`، `core/SecretCode.kt`).
+- رفع تست خراب `ListStoreTest.badSourceIdIsRejected` (در `ListStore.readSource` استثنای شناسه‌ی نامعتبر بلعیده می‌شد) و حذف ثابت‌های `android.R.id.*` پرریسک از `NoPasteEditText`.

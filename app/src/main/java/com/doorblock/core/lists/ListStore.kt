@@ -28,11 +28,11 @@ class ListStore(private val dir: File) {
 
     /** فهرست معتبر ذخیره‌شده برای منبع، یا null اگر نیست/خراب است. */
     fun readSource(id: String): DomainSet? {
+        val f = fileFor(id) // شناسه‌ی نامعتبر همین‌جا استثنا می‌دهد (بیرون از try)
         return try {
-            val f = fileFor(id)
             if (!f.isFile) null else DomainSetCodec.decode(f.readBytes())
         } catch (e: Exception) {
-            null
+            null // فایل خراب = نبودن فهرست؛ هرگز کرش نمی‌کند
         }
     }
 

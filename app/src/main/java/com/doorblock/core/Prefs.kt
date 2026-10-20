@@ -62,6 +62,19 @@ class Prefs(ctx: Context) {
             sp.edit().putString("last_error", v).apply()
         }
 
+    /**
+     * رمز تصادفی ۱۰۰ نویسه‌ای برای مشاهده‌ی موارد سفارشی؛ یک‌بار ساخته و ذخیره می‌شود
+     * (مثل رمزهای بازیابی). رمزهای بازیابی دست‌نخورده‌اند.
+     */
+    val viewSecret: String
+        get() {
+            val saved = sp.getString("view_secret", null)
+            if (saved != null && SecretCode.isValid(saved)) return saved
+            val generated = SecretCode.generate()
+            sp.edit().putString("view_secret", generated).commit()
+            return generated
+        }
+
     fun isLocked(now: Long = System.currentTimeMillis()) = now < lockUntil
 
     fun lock(now: Long = System.currentTimeMillis()) {

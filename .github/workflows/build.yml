@@ -1,5 +1,9 @@
 name: Build APK
-on: [push, workflow_dispatch]
+on:
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 3 * * 1"   # هر دوشنبه: APK تازه با فهرست‌های به‌روز
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -16,6 +20,13 @@ jobs:
             D=$(dirname "$(find project -name settings.gradle.kts | head -1)")
             echo "PROJECT_DIR=$D" >> $GITHUB_ENV
           fi
+      - name: Tool tests (Python)
+        run: python3 -m unittest discover -s tools -v
+        working-directory: ${{ env.PROJECT_DIR }}
+      - name: Refresh bundled domain list from public sources
+        # اگر دانلود یا اعتبارسنجی شکست بخورد، همان seed داخل مخزن استفاده می‌شود
+        run: python3 tools/build_domain_list.py || echo "Using the committed seed list"
+        working-directory: ${{ env.PROJECT_DIR }}
       - uses: actions/setup-java@v4
         with:
           distribution: temurin

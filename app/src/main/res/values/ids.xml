@@ -1,6 +1,7 @@
 <resources>
     <!-- شناسه‌های ثابت تا View ها هنگام چرخش صفحه وضعیت خود را حفظ کنند -->
     <item name="custom_input" type="id" />
+    <item name="secret_input" type="id" />
     <item name="code_input_1" type="id" />
     <item name="code_input_2" type="id" />
     <item name="code_input_3" type="id" />

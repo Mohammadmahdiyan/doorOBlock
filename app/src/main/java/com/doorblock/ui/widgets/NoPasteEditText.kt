@@ -26,18 +26,9 @@ internal class NoPasteEditText(context: Context) : EditText(context) {
         importantForAutofill = View.IMPORTANT_FOR_AUTOFILL_NO
     }
 
-    override fun onTextContextMenuItem(id: Int): Boolean = when (id) {
-        android.R.id.paste,
-        android.R.id.pasteAsPlainText,
-        android.R.id.cut,
-        android.R.id.copy,
-        android.R.id.selectAll,
-        android.R.id.shareText,
-        android.R.id.replaceText,
-        android.R.id.autofill,
-        -> true
-        else -> super.onTextContextMenuItem(id)
-    }
+    // همه‌ی اقدام‌های منوی متن (Paste، Cut، Copy، Select all، Share، Autofill...) بلاک است.
+    // تایپ دستی از این مسیر نمی‌گذرد و تحت تأثیر نیست.
+    override fun onTextContextMenuItem(id: Int): Boolean = true
 
     override fun performLongClick(): Boolean = true
 

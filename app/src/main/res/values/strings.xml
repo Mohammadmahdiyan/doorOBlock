@@ -68,4 +68,18 @@
     <string name="btn_clear_all">پاک‌کردن همه کادرها</string>
     <string name="msg_codes_wrong">حداقل یکی از رمزها اشتباه است؛ همه کادرها پاک شدند.</string>
     <string name="msg_codes_ok">رمزها تأیید شد. تنظیمات دسترس‌پذیری باز می‌شود.</string>
+
+    <!-- رمز ۱۰۰ نویسه‌ای و مشاهده‌ی موارد -->
+    <string name="menu_secret">رمز ۱۰۰ نویسه‌ای و مشاهده موارد</string>
+    <string name="secret_title">مشاهده‌ی موارد مسدودشده</string>
+    <string name="secret_helper">رمز زیر را با دست و دقیق در کادر پایین تایپ کن (هر خط ۲۰ نویسه است؛ خط‌شکن جزو رمز نیست و بدون فاصله تایپ می‌شود). انتخاب، کپی و Paste غیرفعال است. بعد از ثبت رمز درست، سایت‌ها و کلمه‌هایی که خودت اضافه کرده‌ای نمایش داده می‌شود.</string>
+    <string name="secret_counter">%1$s از %2$s نویسه</string>
+    <string name="btn_submit">ثبت</string>
+    <string name="secret_wrong">رمز اشتباه است. کادر را بررسی کن و دوباره ثبت کن.</string>
+    <string name="secret_length_wrong">رمز باید %1$s نویسه باشد.</string>
+    <string name="reveal_title">موارد مسدودشده‌ی سفارشی</string>
+    <string name="reveal_note">فقط مواردی که خودت اضافه کرده‌ای؛ فهرست‌های داخلی برنامه اینجا نیست. با بستن این پنجره دوباره قفل می‌شود.</string>
+    <string name="reveal_sites">سایت‌ها (%1$s)</string>
+    <string name="reveal_words">کلمه‌ها و عبارت‌ها (%1$s)</string>
+    <string name="reveal_none">موردی وجود ندارد.</string>
 </resources>

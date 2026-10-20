@@ -10,6 +10,7 @@ import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
+import android.view.WindowManager
 import android.widget.AbsListView
 import android.widget.BaseAdapter
 import android.widget.ImageButton
@@ -57,6 +58,7 @@ internal fun Activity.makeDialog(content: View, tracker: DialogTracker): Dialog 
     val w = minOf(resources.displayMetrics.widthPixels - dp(32), dp(420))
     d.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
     d.window?.setLayout(w, ViewGroup.LayoutParams.WRAP_CONTENT)
+    d.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE) // کیبورد روی ورودی نیفتد
     return tracker.track(d)
 }
 

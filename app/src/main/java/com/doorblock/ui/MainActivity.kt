@@ -347,10 +347,12 @@ class MainActivity : Activity() {
         val words = CustomItems.count(prefs.custom, ItemKind.WORD)
         popup.menu.add(0, MENU_SITES, 0, getString(R.string.menu_sites, Fa.num(sites)))
         popup.menu.add(0, MENU_WORDS, 1, getString(R.string.menu_words, Fa.num(words)))
+        popup.menu.add(0, MENU_SECRET, 2, getString(R.string.menu_secret))
         popup.setOnMenuItemClickListener { item ->
             when (item.itemId) {
                 MENU_SITES -> openList(ItemKind.SITE)
                 MENU_WORDS -> openList(ItemKind.WORD)
+                MENU_SECRET -> SecretDialog(this, prefs, dialogs).show()
             }
             true
         }
@@ -449,6 +451,7 @@ class MainActivity : Activity() {
     companion object {
         private const val MENU_SITES = 1
         private const val MENU_WORDS = 2
+        private const val MENU_SECRET = 3
         private const val PROGRESS_MAX = 1000
         private const val DAY_MS = 86_400_000L
     }
